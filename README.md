@@ -11,7 +11,7 @@ Example Web Data Connector. Connecting to the [Star Wars API](https://swapi.co).
 1. Open Tableau
 2. Click on 'Web Data Connector' under 'To a Server'
 3. Paste in the url
-"
+```
 https://andre347.github.io/tableau_wdc_swapi/
-"
+```
 4. Click on 'Get Star Wars data'
