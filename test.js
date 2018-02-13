@@ -39,7 +39,7 @@
             });
         }
 
-        loopPages('https://swapi.co/api/people/?format=json&page=1', function (myList) {
+        loopPages('https://swapi.co/api/people/?format=json&page=', function (myList) {
             var newOutput = []
             obj.forEach(function (val) {
                 newOutput.push({
