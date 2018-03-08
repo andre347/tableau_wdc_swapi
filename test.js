@@ -24,20 +24,22 @@
         schemaCallback([tableSchema]);
     };
 
-    myConnector.getData = function (table, doneCallback) {
-        function loopPages(url, callback) {
-            $.getJSON(url, function (data) {
-                var i;
-                var output = [];
-                for (i = 1; i < 10; i++) {
-                    $.getJSON("https://swapi.co/api/people/?format=json&page=" + i, function (data) {
-                        obj = data.results;
-                        callback();
-                    });
-                }
+    function loopPages(url, callback) {
+        $.getJSON(url, function (data) {
+            var i;
+            var output = [];
+            for (i = 1; i < 10; i++) {
+                $.getJSON("https://swapi.co/api/people/?format=json&page=" + i, function (data) {
+                    obj = data.results;
+                    callback();
+                });
+            }
 
-            });
-        }
+        });
+    }
+
+    myConnector.getData = function (table, doneCallback) {
+
 
         loopPages('https://swapi.co/api/people/?format=json&page=', function (myList) {
             var newOutput = []
